@@ -45,7 +45,7 @@ And one more: **it's private.** No feed, no followers, no pressure.
 
 ## How it works
 
-- On wide screens one phone stays in place while the chapters scroll past; it shows each chapter's screen (`assets/screens/`). Video recordings will replace the stills: any `<video data-screen="...">` in the phone plays only while its chapter is in view, and never with Reduce Motion.
+- On wide screens one phone stays in place while the chapters scroll past; it plays each chapter's recording from the app (`assets/video/`, 552×1200 H.264, muted, with a poster). A video plays only while its chapter is in view, and with Reduce Motion only the poster shows. On narrow screens each chapter has its own phone, played while it is on screen.
 - Cards get the app's hand-cut outline from `assets/site.js`; without JavaScript they fall back to plain rounded cards.
 - Fonts (Fraunces, Nunito, Inter, Patrick Hand, all SIL OFL) are subset copies of the app's fonts, served from this site.
 - The App Store badge is shown but not linked until the app is live.
