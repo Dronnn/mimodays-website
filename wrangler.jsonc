@@ -1,0 +1,15 @@
+{
+  "name": "mimodays-site",
+  "compatibility_date": "2026-11-16",
+  // Only public/ is served; README and config stay out of the site.
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "mimodays.mrmaier.com", "custom_domain": true }
+  ],
+  "workers_dev": false,
+  "preview_urls": false
+}

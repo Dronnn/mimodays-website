@@ -48,22 +48,25 @@ And one more: **it's private.** No feed, no followers, no pressure.
 - On wide screens one phone stays in place while the chapters scroll past; it plays each chapter's recording from the app (`assets/video/`, 552×1200 H.264, muted, with a poster). A video plays only while its chapter is in view, and with Reduce Motion only the poster shows. On narrow screens each chapter has its own phone, played while it is on screen.
 - Cards get the app's hand-cut outline from `assets/site.js`; without JavaScript they fall back to plain rounded cards.
 - Fonts (Fraunces, Nunito, Inter, Patrick Hand, all SIL OFL) are subset copies of the app's fonts, served from this site.
-- The App Store badge is shown but not linked until the app is live.
+- Until the app is on the App Store the site says "Coming soon to the App Store" in plain text. Apple's badge is only for apps already available, used unmodified and linked to the product page; it replaces that line at release.
+
+## Files
+
+Everything the site serves is in `public/`. It's plain HTML, so `public/index.html` opens straight from disk; links between pages and the videos need it served, as below.
 
 ## Run locally
 
 ```sh
-python3 -m http.server 8765
+cd public && python3 -m http.server 8765
 ```
 
 Then open http://127.0.0.1:8765.
 
-## Hosting
+## Deploy
 
-Cloudflare Pages, deployed from this repository (`main`), no build command, output directory `/`. `_headers` sets the security headers.
+https://mimodays.mrmaier.com is a Cloudflare Worker that serves `public/` as static files (`wrangler.jsonc`; `_headers` sets the security headers, `404.html` is the not-found page). Cloudflare Workers Builds deploys `main` on every push. Work happens on `develop` and reaches the site through a pull request into `main`.
 
 ## License
 
 Copyright (c) 2026 Andrew Maier. All rights reserved.
-
 The source is public so people can read it. It is not licensed for reuse or redistribution. Brand assets, photography and copy are not to be reused.
