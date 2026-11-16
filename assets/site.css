@@ -86,13 +86,11 @@ h1, h2, h3, p { margin: 0; }
 .menu-button { display: none; width: 44px; height: 44px; border: 0; background: none; padding: 10px; color: var(--ink); cursor: pointer; }
 .menu-button span { display: block; height: 2.5px; border-radius: 2px; background: currentColor; margin: 5px 0; }
 
-/* Coming soon badge: not a link until the app is on the App Store. */
-.badge { display: inline-flex; align-items: center; gap: 12px; height: 52px; padding: 0 22px 0 14px; border-radius: 14px; background: var(--ink); color: var(--card); white-space: nowrap; }
-.badge img { width: 28px; height: 28px; border-radius: 7px; }
-.badge small { display: block; font: 600 11px/1.1 var(--sans); opacity: .85; }
-.badge b { display: block; font: 800 19px/1.1 var(--sans); }
-.badge--large { height: 60px; padding-right: 26px; }
-.badge--large b { font-size: 21px; }
+/* Not Apple's badge: that is only for apps already on the App Store. A plain line until the release. */
+.soon { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 20px 0 10px; border-radius: 999px; background: var(--card); color: var(--ink); font: 700 15px/1 var(--sans); white-space: nowrap; box-shadow: inset 0 0 0 1.5px var(--border); }
+.soon img { width: 28px; height: 28px; border-radius: 7px; }
+.soon--large { height: 56px; padding-right: 24px; font-size: 17px; }
+.soon--large img { width: 34px; height: 34px; border-radius: 8px; }
 
 /* The story: sections 1-6, with one phone that stays put on wide screens. */
 .story { position: relative; }
@@ -220,7 +218,7 @@ h1, h2, h3, p { margin: 0; }
   .site-header .wrap { height: 76px; }
   .wordmark { font-size: 22px; }
   .menu-button { display: block; }
-  .site-header .badge { display: none; }
+  .site-header .soon { display: none; }
   .nav { display: none; position: absolute; top: 70px; left: var(--gutter); right: var(--gutter); padding: 14px 22px; border-radius: 18px; background: var(--card); box-shadow: 0 16px 40px -14px rgba(74, 39, 52, .4); }
   .nav.is-open { display: block; }
   .nav ul { flex-direction: column; gap: 0; }
