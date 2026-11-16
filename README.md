@@ -6,8 +6,8 @@
 
 The promotional website for [MimoDays](https://github.com/Dronnn/mimodays-ios), a private memory journal for iPhone and iPad.
 
-![Status](https://img.shields.io/badge/status-design%20phase-DFE9D0?style=flat-square)
-![Type](https://img.shields.io/badge/site-static%20first-F5AD5E?style=flat-square)
+![Status](https://img.shields.io/badge/status-pre--launch-DFE9D0?style=flat-square)
+![Type](https://img.shields.io/badge/site-static-F5AD5E?style=flat-square)
 ![Accessibility](https://img.shields.io/badge/target-WCAG%202.2%20AA-4B2938?style=flat-square)
 
 </div>
@@ -31,33 +31,42 @@ And one more: **it's private.** No feed, no followers, no pressure.
 ## What this repository is
 
 - A **separate project** from the iOS app: no shared runtime, no user database, no private memories stored here.
-- A **static-first** marketing site. JavaScript is used only for the small interactive demos, the menu, accordions and video controls.
+- A **plain static site**: HTML, one stylesheet and one small script. No build step, no dependencies, no cookies, no analytics.
 - **Honest by design.** No invented App Store links, prices, ratings, testimonials or launch dates. Every claim has to match the shipped app.
 
-## Planned pages
+## Pages
 
 | Route | Purpose |
 |---|---|
-| `/` | The full story and the main call to action |
-| `/how-it-works` | Capture → archive → movie, step by step |
-| `/features` | Features grouped by what you get out of them |
-| `/privacy` | A plain-language privacy explanation |
-| `/faq` | Devices, permissions, timing, storage, export |
-| `/support` | A real way to get help |
-| `/privacy-policy` | The legal policy |
+| `/` | The story: surprise, two cameras, note and voice, memories, movie, privacy, FAQ |
+| `/privacy-policy/` | The privacy policy |
+| `/terms/` | Terms of use |
+| `/support/` | How to get help |
 
-## Quality targets
+## How it works
 
-- **Accessibility:** WCAG 2.2 AA, full keyboard support, `prefers-reduced-motion` respected
-- **Performance:** Core Web Vitals in the good range (LCP ≤ 2.5 s, CLS ≤ 0.1, INP ≤ 200 ms)
-- **Tests:** unit and component tests, end-to-end visitor flows, automated accessibility checks, and visual regression at desktop, tablet and mobile sizes
+- On wide screens one phone stays in place while the chapters scroll past; it plays each chapter's recording from the app (`assets/video/`, 552×1200 H.264, muted, with a poster). A video plays only while its chapter is in view, and with Reduce Motion only the poster shows. On narrow screens each chapter has its own phone, played while it is on screen.
+- Cards get the app's hand-cut outline from `assets/site.js`; without JavaScript they fall back to plain rounded cards.
+- Fonts (Fraunces, Nunito, Inter, Patrick Hand, all SIL OFL) are subset copies of the app's fonts, served from this site.
+- Until the app is on the App Store the site says "Coming soon to the App Store" in plain text. Apple's badge is only for apps already available, used unmodified and linked to the product page; it replaces that line at release.
 
-## Status
+## Files
 
-The site is being designed. The stack and hosting will be chosen before implementation starts, and this README will then gain setup and development instructions.
+Everything the site serves is in `public/`. It's plain HTML, so `public/index.html` opens straight from disk; links between pages and the videos need it served, as below.
+
+## Run locally
+
+```sh
+cd public && python3 -m http.server 8765
+```
+
+Then open http://127.0.0.1:8765.
+
+## Deploy
+
+https://mimodays.mrmaier.com is a Cloudflare Worker that serves `public/` as static files (`wrangler.jsonc`; `_headers` sets the security headers, `404.html` is the not-found page). Cloudflare Workers Builds deploys `main` on every push. Work happens on `develop` and reaches the site through a pull request into `main`.
 
 ## License
 
 Copyright (c) 2026 Andrew Maier. All rights reserved.
-
 The source is public so people can read it. It is not licensed for reuse or redistribution. Brand assets, photography and copy are not to be reused.
