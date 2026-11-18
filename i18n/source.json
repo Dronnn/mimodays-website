@@ -26,6 +26,9 @@
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": {
   "page": "index.html"
  },
+ "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": {
+  "page": "index.html"
+ },
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": {
   "page": "index.html"
  },
@@ -44,10 +47,10 @@
  "A little surprise": {
   "page": "index.html"
  },
- "You can’t plan<br>real life.": {
+ "You can’t plan <br>real life.": {
   "page": "index.html"
  },
- "That’s the whole idea. At a random time, a notification arrives. Drop what you’re doing and, wherever you are, capture what’s around you right away, just as it is. Tap it and the camera opens. Busy? Skip it: no streaks to protect, no missed-day guilt.": {
+ "That’s the whole idea. At a random time in the hours you choose, a notification arrives. Drop what you’re doing and, wherever you are, capture what’s around you right away, just as it is. Tap it and the camera opens. Busy? Skip it: no streaks to protect, no missed-day guilt.": {
   "page": "index.html"
  },
  "now": {
@@ -65,19 +68,19 @@
  "Two cameras, one moment": {
   "page": "index.html"
  },
- "You, and the world<br>around you.": {
+ "You, and the world <br>around you.": {
   "page": "index.html"
  },
  "See the scene in front of you and your own face in the same memory. Snap a photo or record a short video. Later, the two views tell a fuller story.": {
   "page": "index.html"
  },
- "Filming with both cameras at once needs an iPhone that supports it. Every other iPhone uses one camera.": {
+ "Filming with both cameras at once needs an iPhone or iPad that supports it. Others use one camera.": {
   "page": "index.html"
  },
  "A few words, a real voice": {
   "page": "index.html"
  },
- "Leave a little note<br>for future you.": {
+ "Leave a little note <br>for future you.": {
   "page": "index.html"
  },
  "What were you doing? What were you thinking? Add a sentence, record a voice note, or save the moment without a word. Date and time are kept automatically; the place only if you want it.": {
@@ -98,7 +101,7 @@
  "Calendar, map, timeline": {
   "page": "index.html"
  },
- "A scrapbook that knows<br>when and where.": {
+ "A scrapbook that knows <br>when and where.": {
   "page": "index.html"
  },
  "Find an afternoon by its date. Go back to a street by its place. Or simply wander through your memories in order.": {
@@ -125,16 +128,16 @@
  "Your movie": {
   "page": "index.html"
  },
- "One day, these little<br>pieces become a movie.": {
+ "One day, these little <br>pieces become a movie.": {
   "page": "index.html"
  },
- "Pick a month, a year, or any stretch of time. MimoDays brings the moments together, with your notes and voices, so you can see your life change in the smallest ways.": {
+ "Pick a month, a year, or any stretch of time. MimoDays brings the moments together, with their dates, places and voice notes, so you can see your life change in the smallest ways.": {
   "page": "index.html"
  },
  "Quick recap": {
   "page": "index.html"
  },
- "About a minute": {
+ "Up to a minute": {
   "page": "index.html"
  },
  "The whole story": {
@@ -188,7 +191,7 @@
  "Privacy": {
   "page": "index.html"
  },
- "A private story,<br>not another social feed.": {
+ "A private story, <br>not another social feed.": {
   "page": "index.html"
  },
  "MimoDays is made for your memories, not for followers. No public timeline, no likes, no pressure to share. You decide what to keep, export or delete.": {
@@ -236,19 +239,19 @@
  "Do I need to capture something every day?": {
   "page": "index.html"
  },
- "No. A surprise is an invitation, not an assignment. Skip it and nothing is lost: there are no streaks and no reminders about what you missed.": {
+ "No. A surprise is an invitation, not an assignment. Skip it and nothing is lost: there are no streaks and no notifications about what you missed.": {
   "page": "index.html"
  },
  "Which iPhones does it work on?": {
   "page": "index.html"
  },
- "Any iPhone or iPad with iOS 18 or later.": {
+ "Any iPhone with iOS 18 or later, and any iPad with iPadOS 18 or later.": {
   "page": "index.html"
  },
  "Can I use only one camera?": {
   "page": "index.html"
  },
- "Yes, a single camera works too. On iPhones that can’t film with both cameras at once, MimoDays uses one.": {
+ "Yes. A moment can keep just one view: its selfie window can be removed. On iPhones that can’t film with both cameras at once, MimoDays uses one.": {
   "page": "index.html"
  },
  "Where are my memories stored?": {
@@ -260,7 +263,7 @@
  "Can I get my original photos and videos out?": {
   "page": "index.html"
  },
- "Yes. Export a moment as you see it in MimoDays, with the selfie window, or as the separate original camera files. You can also export many moments at once as one archive.": {
+ "Yes. Export a moment as you see it in MimoDays, with the selfie window, or as separate photos and videos, one per camera. You can also export many moments at once as one archive.": {
   "page": "index.html"
  },
  "Does it cost anything?": {
@@ -269,7 +272,7 @@
  "No. Every feature is free. If MimoDays helps you, you can leave an optional tip; it doesn’t unlock anything.": {
   "page": "index.html"
  },
- "One ordinary day.<br>A story worth keeping.": {
+ "One ordinary day. <br>A story worth keeping.": {
   "page": "index.html"
  },
  "Start collecting life’s little pieces with MimoDays.": {
@@ -365,7 +368,7 @@
  "Moving to a new iPhone": {
   "page": "support/index.html"
  },
- "On the old iPhone, open Settings › Backup and make a backup. Save it to iCloud Drive, another place in Files, or a computer. On the new iPhone, install MimoDays, open Settings › Backup, tap Restore from a backup and choose that file.": {
+ "On the old iPhone, open Settings › Backup and make a backup. Save it to iCloud Drive, another place in Files, or a computer. On the new iPhone, install MimoDays, finish or skip the introduction, open Settings › Backup, tap Restore from a backup, choose that file and confirm.": {
   "page": "support/index.html"
  },
  "Surprises don’t arrive": {
@@ -398,7 +401,7 @@
  "Privacy Policy": {
   "page": "privacy-policy/index.html"
  },
- "Last updated: November 16, 2026. The short version: MimoDays doesn’t collect, keep or share your personal data. There is no account and no MimoDays server.": {
+ "Last updated: November 18, 2026. The short version: your moments stay on your device and never reach me. There is no account and no MimoDays server.": {
   "page": "privacy-policy/index.html"
  },
  "Who makes MimoDays": {
@@ -410,7 +413,7 @@
  "What stays on your device": {
   "page": "privacy-policy/index.html"
  },
- "Your photos, videos, voice notes and their transcripts, notes, places, collections and movie projects are kept in the app’s storage on your iPhone or iPad. MimoDays never sends them to me or to anyone else.": {
+ "Your photos, videos, voice notes and their transcripts, notes, places, collections and movie projects are kept in the app’s storage on your iPhone or iPad. MimoDays never sends them to me or to anyone else. The one thing the app sends on its own is a location, to name a place (see Permissions).": {
   "page": "privacy-policy/index.html"
  },
  "If iCloud Backup is on for your device, Apple may include this data in your device backup, under Apple’s privacy policy.": {
@@ -419,10 +422,10 @@
  "Permissions": {
   "page": "privacy-policy/index.html"
  },
- "<strong>Camera and microphone:</strong> only while you capture a moment or record a voice note.": {
+ "<strong>Camera and microphone:</strong> only while the camera is open or you record a voice note. The microphone is used for video only when its sound is on.": {
   "page": "privacy-policy/index.html"
  },
- "<strong>Location:</strong> optional, and only while you use the app. When you save a moment with a place, its name is looked up through Apple’s map service. You choose how precise places are, and you can turn them off.": {
+ "<strong>Location:</strong> optional, and only while you use the app. To name a place, its coordinates go to Apple’s map service, which handles them under Apple’s privacy policy: when a new moment is ready to save, when you look for a nearby place or search for one, and when you import photos with their places. You choose how precise places found for you are, and you can turn them off. A place you pick yourself is kept as you picked it, and an imported photo keeps the location stored in its file.": {
   "page": "privacy-policy/index.html"
  },
  "<strong>Photos:</strong> MimoDays can only add to your library, to save what you export. Photos you import are chosen in Apple’s picker, and MimoDays sees only the ones you pick.": {
@@ -434,7 +437,7 @@
  "<strong>Face ID:</strong> App Lock asks iOS to check it; MimoDays never sees your face data.": {
   "page": "privacy-policy/index.html"
  },
- "<strong>Speech:</strong> on iOS 26 and later, voice notes are transcribed on your device.": {
+ "<strong>Speech:</strong> on iOS 26 and later, voice notes are transcribed on your device, in the languages it supports. iOS may first download the speech model from Apple.": {
   "page": "privacy-policy/index.html"
  },
  "Backups and exports": {
@@ -464,7 +467,7 @@
  "Your choices": {
   "page": "privacy-policy/index.html"
  },
- "You can delete any moment, or everything at once in Settings › Privacy &amp; App Lock › Delete all data. Deleting the app removes all its data from the device.": {
+ "You can delete any moment. It waits in Recently deleted for 30 days, unless you delete it there for good. Settings › Privacy &amp; App Lock › Delete all data removes everything at once. Deleting the app removes all its data from the device. Backups and exports you made stay where you saved them.": {
   "page": "privacy-policy/index.html"
  },
  "Children": {
@@ -476,7 +479,7 @@
  "Your rights": {
   "page": "privacy-policy/index.html"
  },
- "Because I hold no personal data about you, there is nothing for me to access, correct, export or delete. Everything is on your device and under your control. If you write to me, I use your email only to reply and delete it when the conversation is over.": {
+ "The app gives me no personal data about you, so there is nothing of yours for me to access, correct, export or delete. Everything is on your device and under your control. If you write to me, I use your email only to reply and delete it when the conversation is over.": {
   "page": "privacy-policy/index.html"
  },
  "Changes": {
@@ -488,7 +491,7 @@
  "<a href=\"/privacy-policy/\" aria-current=\"page\">Privacy Policy</a>": {
   "page": "privacy-policy/index.html"
  },
- "How MimoDays handles your data: it doesn’t collect, keep or share it.": {
+ "How MimoDays handles your data: your moments stay on your device and never reach me.": {
   "page": "privacy-policy/index.html"
  },
  "Terms of Use · MimoDays": {
@@ -497,7 +500,7 @@
  "Terms of Use": {
   "page": "terms/index.html"
  },
- "Last updated: November 16, 2026. Plain terms for a simple app.": {
+ "Last updated: November 18, 2026. Plain terms for a simple app.": {
   "page": "terms/index.html"
  },
  "The licence": {
@@ -521,7 +524,7 @@
  "Keep your own backups": {
   "page": "terms/index.html"
  },
- "Your moments exist only on your device and in backups you make. Please back up regularly: if the device is lost or the app is deleted without a backup, your moments can’t be recovered.": {
+ "MimoDays keeps no copy of your moments. They exist on your device, in backups you make, in what you export and in iCloud Backup if it’s on for your device. Please back up regularly: if the device is lost or the app is deleted without a backup, your moments can’t be recovered.": {
   "page": "terms/index.html"
  },
  "Be kind with the camera": {

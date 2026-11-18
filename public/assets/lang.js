@@ -12,6 +12,8 @@
     if (paths.includes(picked)) go(picked);
     return;
   }
+  // Came here from another page of this site (English picked with storage blocked, say): stay.
+  try { if (document.referrer && new URL(document.referrer).origin === location.origin) return; } catch (e) { /* no referrer */ }
   const match = tag => {
     const t = tag.toLowerCase();
     if (t.startsWith("zh")) return /hant|-tw|-hk|-mo/.test(t) ? "zh-hant" : "zh-hans";

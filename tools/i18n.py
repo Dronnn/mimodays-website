@@ -220,8 +220,9 @@ def language_switch(current, page, label):
     name = next(n for p, _, n, _ in LANGS if p == current)
     short = SHORT.get(current, current.upper())
     return ("<!-- i18n:switch -->\n"
-            f'      <details class="lang-switch"><summary aria-label="{html.escape(label)}: {name}">{GLOBE}'
-            f'<span class="lang-switch__code">{short}</span></summary>'
+            # The name starts with the code people see (WCAG label in name), then says it in words.
+            f'      <details class="lang-switch"><summary>{GLOBE}'
+            f'<span class="lang-switch__code">{short}</span><span class="visually-hidden"> {html.escape(label)}: {name}</span></summary>'
             f'<div class="lang-switch__panel cut" data-seed="5" data-radius="20"><ul>{"".join(links)}</ul></div></details>\n'
             "      <!-- /i18n:switch -->")
 
