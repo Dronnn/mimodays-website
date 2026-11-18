@@ -129,7 +129,6 @@
  "Helpful details": "Корисні подробиці",
  "When you write, add your iPhone model, the iOS version and the MimoDays version (Settings › Help &amp; about).": "У повідомленні вкажи модель iPhone, версію iOS і версію MimoDays (Налаштування › Довідка та інформація).",
  "<a href=\"/support/\" aria-current=\"page\">Support</a>": "<a href=\"/support/\" aria-current=\"page\">Підтримка</a>",
- "Get help with MimoDays.": "Допомога з MimoDays.",
  "Privacy Policy · MimoDays": "Політика конфіденційності · MimoDays",
  "Privacy Policy": "Політика конфіденційності",
  "Last updated: November 16, 2026. The short version: MimoDays doesn’t collect, keep or share your personal data. There is no account and no MimoDays server.": "Останнє оновлення: 16 листопада 2026 року. Коротко: MimoDays не збирає, не зберігає й не передає твої персональні дані. Немає ні облікового запису, ні сервера MimoDays.",
@@ -182,11 +181,12 @@
  "Contact": "Зв’язок",
  "<a href=\"mailto:mimodays@mrmaier.com\">mimodays@mrmaier.com</a>": "<a href=\"mailto:mimodays@mrmaier.com\">mimodays@mrmaier.com</a>",
  "<a href=\"/terms/\" aria-current=\"page\">Terms of Use</a>": "<a href=\"/terms/\" aria-current=\"page\">Умови використання</a>",
- "The terms for using MimoDays.": "Умови використання MimoDays.",
  "Page not found · MimoDays": "Сторінку не знайдено · MimoDays",
  "This page went missing.": "Ця сторінка загубилася.",
  "Like a moment nobody caught. Try the <a href=\"/\">home page</a> instead.": "Як момент, якого ніхто не зловив. Завітай на <a href=\"/\">головну сторінку</a>.",
  "This page doesn’t exist.": "Цієї сторінки не існує.",
  "Language": "Мова",
- "This translation is provided for convenience. If it differs from the English version, the English version applies.": "Цей переклад надано для зручності. У разі розбіжностей з англійською версією застосовується англійська версія."
+ "This translation is provided for convenience. If it differs from the English version, the English version applies.": "Цей переклад надано для зручності. У разі розбіжностей з англійською версією застосовується англійська версія.",
+ "Help with MimoDays: moving to a new iPhone, surprises that don’t arrive, the camera or microphone, and how to write to me.": "Допомога з MimoDays: перехід на новий iPhone, сюрпризи, які не надходять, камера чи мікрофон і як написати мені.",
+ "The terms for using MimoDays: free with optional tips, your moments stay yours, keep your own backups.": "Умови використання MimoDays: застосунок безкоштовний, чайові за бажанням. Твої миті залишаються твоїми. Зберігай власні резервні копії."
 }

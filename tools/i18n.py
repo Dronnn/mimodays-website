@@ -245,7 +245,9 @@ def translate(page, path, hreflang, rtl, table):
         for name, value in texts:
             new = html.escape(table[html.unescape(value)], quote=True)
             tag = tag.replace(f'{name}="{value}"', f'{name}="{new}"', 1)
-        tag = re.sub(r'href="([^"]*)"', lambda m: f'href="{localized_href(m.group(1), path)}"', tag)
+        # Links get their language below, once (doing it here too sent the logo to /ar/ar/).
+        if not tag.startswith("<a"):
+            tag = re.sub(r'href="([^"]*)"', lambda m: f'href="{localized_href(m.group(1), path)}"', tag)
         edits.append((start, end, tag))
     # Links inside translated texts and plain tags outside them.
     text = source
