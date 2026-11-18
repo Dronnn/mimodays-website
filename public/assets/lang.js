@@ -1,6 +1,9 @@
 // English pages only: a first visit goes to the visitor's own language, if MimoDays speaks it.
 // A language picked in the footer menu sticks, English included.
 (() => {
+  // Search crawlers stay where they are: hreflang already tells them about every language,
+  // and a redirect would hide this page from one that renders in another language.
+  if (/googlebot|google-inspectiontool|bingbot|yandex|duckduckbot|applebot|baiduspider|petalbot|seznambot|chrome-lighthouse/i.test(navigator.userAgent)) return;
   const paths = ["de", "fr", "es", "it", "nl", "sv", "pl", "pt-br", "ru", "uk", "be", "hy", "ka", "kk", "tr", "he", "ar", "ja", "ko", "zh-hans", "zh-hant"];
   const go = path => location.replace(`/${path}${location.pathname}${location.search}${location.hash}`);
   let picked = null;
