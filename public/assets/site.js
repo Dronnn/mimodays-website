@@ -55,6 +55,11 @@
     cuts.forEach(draw);
   }
 
+  // A language picked in the footer sticks (lang.js reads it on the English pages).
+  document.querySelectorAll(".languages a[data-lang]").forEach(link => link.addEventListener("click", () => {
+    try { localStorage.setItem("mimodays.lang", link.dataset.lang); } catch (e) { /* storage blocked: the link still works */ }
+  }));
+
   // Menu on narrow screens.
   const button = document.querySelector(".menu-button");
   const nav = document.getElementById("site-nav");
