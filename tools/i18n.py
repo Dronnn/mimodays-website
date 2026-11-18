@@ -169,6 +169,15 @@ def check(lang):
     return errors
 
 
+# Open Graph wants language_TERRITORY, in the forms Facebook knows (Arabic is ar_AR there).
+OG_LOCALE = {
+    "en": "en_US", "de": "de_DE", "fr": "fr_FR", "es": "es_ES", "it": "it_IT", "nl": "nl_NL", "sv": "sv_SE",
+    "pl": "pl_PL", "pt-br": "pt_BR", "ru": "ru_RU", "uk": "uk_UA", "be": "be_BY", "hy": "hy_AM", "ka": "ka_GE",
+    "kk": "kk_KZ", "tr": "tr_TR", "he": "he_IL", "ar": "ar_AR", "ja": "ja_JP", "ko": "ko_KR", "zh-hans": "zh_CN",
+    "zh-hant": "zh_TW",
+}
+
+
 def localized_href(href, path):
     if not href.startswith("/") or href.startswith(("/assets/", "/apple-touch-icon")):
         return href
@@ -211,8 +220,9 @@ def language_switch(current, page, label):
     name = next(n for p, _, n, _ in LANGS if p == current)
     short = SHORT.get(current, current.upper())
     return ("<!-- i18n:switch -->\n"
-            f'      <details class="lang-switch"><summary aria-label="{html.escape(label)}: {name}">{GLOBE}'
-            f'<span class="lang-switch__code">{short}</span></summary>'
+            # The name starts with the code people see (WCAG label in name), then says it in words.
+            f'      <details class="lang-switch"><summary>{GLOBE}'
+            f'<span class="lang-switch__code">{short}</span><span class="visually-hidden"> {html.escape(label)}: {name}</span></summary>'
             f'<div class="lang-switch__panel cut" data-seed="5" data-radius="20"><ul>{"".join(links)}</ul></div></details>\n'
             "      <!-- /i18n:switch -->")
 
@@ -256,6 +266,7 @@ def translate(page, path, hreflang, rtl, table):
     text = re.sub(r'(<a\b[^>]*?)href="([^"]*)"', lambda m: f'{m.group(1)}href="{localized_href(m.group(2), path)}"', text)
     direction = ' dir="rtl"' if rtl else ""
     text = text.replace('<html lang="en">', f'<html lang="{hreflang}"{direction}>', 1)
+    text = text.replace('<meta property="og:locale" content="en_US">', f'<meta property="og:locale" content="{OG_LOCALE[path]}">', 1)
     for url in (page_url("en", page),):
         text = text.replace(f'href="{url}"', f'href="{page_url(path, page)}"')
         text = text.replace(f'content="{url}"', f'content="{page_url(path, page)}"')

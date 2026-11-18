@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runInNewContext } from 'node:vm';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pub = join(root, 'public');
@@ -69,6 +70,38 @@ test('titles, descriptions and canonical links', () => {
     const canonical = tags(text, 'link').find((t) => attr(t, 'rel') === 'canonical');
     assert.equal(attr(canonical ?? '', 'href'), origin + where, `${where} canonical`);
   }
+});
+
+test('og:locale matches the page language', () => {
+  for (const [file, text] of html) {
+    if (is404(file)) continue;
+    const lang = attr(tags(text, 'html')[0] ?? '', 'lang');
+    const locale = attr(tags(text, 'meta').find((t) => attr(t, 'property') === 'og:locale') ?? '', 'content');
+    const expected = { 'zh-Hans': 'zh_CN', 'zh-Hant': 'zh_TW', 'pt-BR': 'pt_BR' }[lang] ?? lang;
+    assert.ok(locale?.startsWith(expected), `${urlPath(file)} og:locale ${locale} for ${lang}`);
+  }
+});
+
+test('the language redirect moves people, not search crawlers', () => {
+  const script = readFileSync(join(pub, 'assets', 'lang.js'), 'utf8');
+  const visit = (userAgent, languages) => {
+    let target = null;
+    const location = { pathname: '/support/', search: '', hash: '', replace: (url) => { target = url; } };
+    const localStorage = { getItem: () => null };
+    runInNewContext(script, { navigator: { userAgent, languages }, location, localStorage });
+    return target;
+  };
+  const chrome = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+  assert.equal(visit(chrome, ['ru-RU', 'en']), '/ru/support/');
+  assert.equal(visit(chrome, ['en-GB']), null);
+  // The Yandex app's own browser is a person, not a crawler.
+  assert.equal(visit('Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 YaBrowser/24.12.1 YandexSearch/24.120 Mobile Safari/537.36', ['ru-RU']), '/ru/support/');
+  for (const bot of [
+    'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)',
+    'Mozilla/5.0 (compatible; YandexRenderResourcesBot/1.0; +http://yandex.com/bots)',
+    'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/130.0.0.0 Safari/537.36',
+  ]) assert.equal(visit(bot, ['ru-RU']), null, bot);
 });
 
 test('hreflang links point to every language and exist', () => {

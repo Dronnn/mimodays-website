@@ -89,18 +89,30 @@
   const nav = document.getElementById("site-nav");
   if (button && nav) {
     const set = open => { nav.classList.toggle("is-open", open); button.setAttribute("aria-expanded", String(open)); };
-    button.addEventListener("click", () => set(!nav.classList.contains("is-open")));
+    // The button comes after the links, so opening moves the focus to the first one.
+    button.addEventListener("click", () => {
+      const open = !nav.classList.contains("is-open");
+      set(open);
+      if (open) nav.querySelector("a")?.focus();
+    });
     nav.addEventListener("click", e => { if (e.target.closest("a")) set(false); });
-    document.addEventListener("keydown", e => { if (e.key === "Escape") set(false); });
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape" || !nav.classList.contains("is-open")) return;
+      const inside = nav.contains(document.activeElement);
+      set(false);
+      if (inside) button.focus();
+    });
   }
 
   // The phone that stays put: shows the screen of the chapter crossing the middle of the window.
   const rail = document.querySelector(".rail");
   const layers = rail ? [...rail.querySelectorAll("[data-screen]")] : [];
   const chapters = [...document.querySelectorAll(".chapter[data-screen]")];
+  const toggle = document.querySelector(".motion-toggle");
+  const stopped = () => toggle?.getAttribute("aria-pressed") === "true";
   const play = media => {
     if (!(media instanceof HTMLVideoElement)) return;
-    if (reduceMotion.matches) { media.pause(); return; }
+    if (reduceMotion.matches || stopped()) { media.pause(); return; }
     if (media.preload === "none") media.preload = "auto";
     media.play().catch(() => {});
   };
@@ -119,8 +131,30 @@
 
   // Phones inside the chapters (narrow screens): play only while on screen.
   const inline = document.querySelectorAll(".phone--inline video");
+  const seen = new Set();
   if (inline.length && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting ? play(e.target) : pause(e.target)), { threshold: .4 });
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      e.isIntersecting ? seen.add(e.target) : seen.delete(e.target);
+      e.isIntersecting ? play(e.target) : pause(e.target);
+    }), { threshold: .4 });
     inline.forEach(v => io.observe(v));
+  }
+
+  // Pause videos: stops every recording; pressed again, the ones on screen play on.
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      toggle.setAttribute("aria-pressed", String(!stopped()));
+      if (stopped()) {
+        document.querySelectorAll(".story video").forEach(pause);
+      } else {
+        layers.filter(l => l.classList.contains("is-on")).forEach(play);
+        seen.forEach(play);
+      }
+    });
+    // Only while the story is on screen: it would cover the footer's links.
+    const story = document.querySelector(".story");
+    if (story && "IntersectionObserver" in window) {
+      new IntersectionObserver(([e]) => toggle.classList.toggle("is-away", !e.isIntersecting)).observe(story);
+    }
   }
 })();
