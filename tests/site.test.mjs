@@ -94,6 +94,8 @@ test('the language redirect moves people, not search crawlers', () => {
   const chrome = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
   assert.equal(visit(chrome, ['ru-RU', 'en']), '/ru/support/');
   assert.equal(visit(chrome, ['en-GB']), null);
+  // The Yandex app's own browser is a person, not a crawler.
+  assert.equal(visit('Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 YaBrowser/24.12.1 YandexSearch/24.120 Mobile Safari/537.36', ['ru-RU']), '/ru/support/');
   for (const bot of [
     'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
     'Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)',
