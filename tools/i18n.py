@@ -267,6 +267,20 @@ def translate(page, path, hreflang, rtl, table):
     return decorate(text, path, page, table["Language"])
 
 
+def stamp_assets():
+    """Assets are cached for a week: each page asks for its stylesheet and scripts by their content, so a new
+    version reaches visitors at once."""
+    import hashlib
+    names = ["site.css", "site.js", "lang.js"]
+    stamps = {n: hashlib.sha256((PUBLIC / "assets" / n).read_bytes()).hexdigest()[:10] for n in names}
+    pattern = re.compile(r'(/assets/(site\.css|site\.js|lang\.js))(\?v=[0-9a-f]+)?"')
+    for page in PUBLIC.rglob("*.html"):
+        text = page.read_text()
+        new = pattern.sub(lambda m: f'{m.group(1)}?v={stamps[m.group(2)]}"', text)
+        if new != text:
+            page.write_text(new)
+
+
 def build():
     ready = []
     for path, hreflang, _, rtl in LANGS[1:]:
@@ -284,6 +298,7 @@ def build():
             out = PUBLIC / path / page
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(translate(page, path, hreflang, rtl, table))
+    stamp_assets()
     urls = [page_url(p, page) for page in PAGES if page != "404.html" for p, *_ in LANGS]
     (PUBLIC / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
