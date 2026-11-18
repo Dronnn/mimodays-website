@@ -9,10 +9,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
       - name: Every language translated
         run: python3 tools/i18n.py check $(ls i18n | grep -v source.json | sed 's/\.json$//')
       - name: Built pages are up to date
         run: python3 tools/i18n.py build && git diff --exit-code -- public
       - name: Page checks
-        run: node --test tests/
+        run: node --test tests/site.test.mjs
