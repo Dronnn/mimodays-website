@@ -42,6 +42,7 @@ And one more: **it's private.** No feed, no followers, no pressure.
 | `/privacy-policy/` | The privacy policy |
 | `/terms/` | Terms of use |
 | `/support/` | How to get help |
+| `/<language>/…` | The same pages in each of the app's other 21 languages, e.g. `/de/`, `/pt-br/support/`, `/zh-hant/terms/` |
 
 ## How it works
 
@@ -49,6 +50,18 @@ And one more: **it's private.** No feed, no followers, no pressure.
 - Cards get the app's hand-cut outline from `assets/site.js`; without JavaScript they fall back to plain rounded cards.
 - Fonts (Fraunces, Nunito, Inter, Patrick Hand, all SIL OFL) are subset copies of the app's fonts, served from this site.
 - Until the app is on the App Store the site says "Coming soon to the App Store" in plain text. Apple's badge is only for apps already available, used unmodified and linked to the product page; it replaces that line at release.
+
+## Languages
+
+The site speaks the app's 22 languages. The English pages in `public/` are the source; `tools/i18n.py` makes the others.
+
+- `python3 tools/i18n.py extract` collects every text of the English pages into `i18n/source.json`.
+- `i18n/<language>.json` holds that language's text for each English one, with the same markup inside. `python3 tools/i18n.py check <language>` confirms nothing is missing and no tag or link changed.
+- `python3 tools/i18n.py build` writes `public/<language>/…`, adds the language menu (footer) and `hreflang` alternates to every page, English included, and rewrites `sitemap.xml`.
+
+After changing English copy: extract, update the languages, check, build. Pages under `public/<language>/` are generated; edit the English page or the language file, not them.
+
+On a first visit to an English page, `assets/lang.js` moves the visitor to their browser's language if the site has it. A language picked in the footer menu is remembered and wins. Arabic and Hebrew pages are right to left; the stylesheet uses logical properties for that.
 
 ## Files
 
