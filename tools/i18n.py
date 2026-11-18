@@ -194,6 +194,29 @@ def language_menu(current, page, label):
             "      <!-- /i18n:languages -->")
 
 
+# What the header's language button shows: a short code, or the script's own short name where codes collide.
+SHORT = {"pt-br": "PT", "zh-hans": "简体", "zh-hant": "繁體"}
+GLOBE = ('<svg class="lang-switch__globe" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" '
+         'stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/>'
+         '<path d="M3.6 12h16.8M12 3.4c2.4 2.5 3.6 5.4 3.6 8.6s-1.2 6.1-3.6 8.6c-2.4-2.5-3.6-5.4-3.6-8.6s1.2-6.1 3.6-8.6z"/></g></svg>')
+
+
+def language_switch(current, page, label):
+    """The header's language button and its panel: every language by its own name, the current one marked."""
+    links = []
+    for path, hreflang, name, _ in LANGS:
+        target = page_url(path, "index.html" if page == "404.html" else page).removeprefix(SITE)
+        mark = ' aria-current="true"' if path == current else ""
+        links.append(f'<li><a href="{target}" hreflang="{hreflang}" lang="{hreflang}" data-lang="{path}"{mark}>{name}</a></li>')
+    name = next(n for p, _, n, _ in LANGS if p == current)
+    short = SHORT.get(current, current.upper())
+    return ("<!-- i18n:switch -->\n"
+            f'      <details class="lang-switch"><summary aria-label="{html.escape(label)}: {name}">{GLOBE}'
+            f'<span class="lang-switch__code">{short}</span></summary>'
+            f'<div class="lang-switch__panel cut" data-seed="5" data-radius="20"><ul>{"".join(links)}</ul></div></details>\n'
+            "      <!-- /i18n:switch -->")
+
+
 def alternates(page, english):
     lines = [f'<link rel="alternate" hreflang="{h}" href="{page_url(p, page)}">' for p, h, _, _ in LANGS]
     lines.append(f'<link rel="alternate" hreflang="x-default" href="{page_url("en", page)}">')
@@ -208,6 +231,7 @@ def decorate(text, path, page, label):
     text = BLOCK.sub("", text)
     if page != "404.html":
         text = text.replace("</head>", "  " + alternates(page, path == "en") + "\n</head>", 1)
+    text = text.replace('<span class="soon">', language_switch(path, page, label) + '\n      <span class="soon">', 1)
     menu = language_menu(path, page, label)
     text = re.sub(r'(\n\s*<p class="legal-line">)', "\n      " + menu + r"\1", text, count=1)
     return text

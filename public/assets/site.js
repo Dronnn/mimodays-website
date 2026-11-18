@@ -55,8 +55,32 @@
     cuts.forEach(draw);
   }
 
-  // A language picked in the footer sticks (lang.js reads it on the English pages).
-  document.querySelectorAll(".languages a[data-lang]").forEach(link => link.addEventListener("click", () => {
+  // The header bar on one line in every language: the badge goes first, then the menu folds behind its button.
+  const header = document.querySelector(".site-header");
+  const bar = header && header.querySelector(".wrap");
+  if (bar) {
+    const overflows = () => bar.scrollWidth > bar.clientWidth + 1;
+    const fit = () => {
+      header.classList.remove("is-tight", "is-folded");
+      if (overflows()) header.classList.add("is-tight");
+      if (overflows()) header.classList.add("is-folded");
+    };
+    fit();
+    addEventListener("resize", fit);
+    if (document.fonts) document.fonts.ready.then(fit);
+  }
+
+  // The header's language panel closes on a click elsewhere or Escape.
+  const switcher = document.querySelector(".lang-switch");
+  if (switcher) {
+    document.addEventListener("click", e => { if (switcher.open && !switcher.contains(e.target)) switcher.open = false; });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && switcher.open) { switcher.open = false; switcher.querySelector("summary").focus(); }
+    });
+  }
+
+  // A language picked in the header or the footer sticks (lang.js reads it on the English pages).
+  document.querySelectorAll(".languages a[data-lang], .lang-switch a[data-lang]").forEach(link => link.addEventListener("click", () => {
     try { localStorage.setItem("mimodays.lang", link.dataset.lang); } catch (e) { /* storage blocked: the link still works */ }
   }));
 
