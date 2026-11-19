@@ -21,10 +21,11 @@
   <meta name="theme-color" content="#F3E8DE">
   <link rel="icon" href="/assets/icon-64.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/video/today.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="/assets/fonts/BalsamiqSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/Comfortaa.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/site.css?v=070c9e3a26">
-  <script src="/assets/site.js?v=e917750584" defer></script>
+  <script src="/assets/site.js?v=a4751522f7" defer></script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="en" href="https://mimodays.mrmaier.com/">
   <link rel="alternate" hreflang="de" href="https://mimodays.mrmaier.com/de/">
@@ -85,11 +86,11 @@
             <div class="phone">
               <div class="phone__screen">
                 <video data-screen="today" class="is-on" src="/assets/video/today.mp4" poster="/assets/video/today.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="surprise" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="camera" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="note" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="memories" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="movie" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="surprise" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="camera" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="note" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="memories" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="movie" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
               </div>
             </div>
           </div>
@@ -125,7 +126,7 @@
               <span class="body">Айналаңа қара. Бұл естелікке айналуы мүмкін.</span>
             </div>
             <p><span class="ribbon cut" data-amp="2" data-radius="20"><img src="/assets/star.svg" alt="">Келесі тосын сыйың жолда</span></p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Құлыптау экранындағы MimoDays тосын сыйы"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Құлыптау экранындағы MimoDays тосын сыйы"></video></div></div>
           </div>
         </div>
       </section>
@@ -137,7 +138,7 @@
             <h2 class="h2" id="cameras-title">Сен және <br>айналаңдағы әлем.</h2>
             <p class="lead">Алдыңдағы көрініс пен өз жүзіңді бір естелікте сақта. Фото не қысқа бейне түсір. Кейін осы екі көрініс сол сәттің хикаясын толығырақ жеткізеді.</p>
             <p class="footnote">Екі камерамен бір уақытта түсіру үшін осы мүмкіндікті қолдайтын iPhone немесе iPad қажет. Басқа құрылғыларда бір камера қолданылады.</p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Селфи терезесі бар MimoDays камерасы"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Селфи терезесі бар MimoDays камерасы"></video></div></div>
           </div>
         </div>
       </section>
@@ -163,7 +164,7 @@
               <p>«Оның қолынан келді, шынымен келді. Қарашы, қалай кетіп барады…»</p>
               <small>Осы iPhone-да мәтінге айналдырылған</small>
             </figure>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Сәтті жазуымен және жазбасымен бірге сақтау"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Сәтті жазуымен және жазбасымен бірге сақтау"></video></div></div>
           </div>
         </div>
       </section>
@@ -179,7 +180,7 @@
               <div class="feature cut"><h3 class="h3">Болған жерлеріңе қайта орал</h3><p>Өзің сақтаған орындардың картасы.</p></div>
               <div class="feature cut"><h3 class="h3">Шағын сәттерді ақтарып шық</h3><p>Сәттерің ретімен, жазбаларымен және дауысыңмен бірге.</p></div>
             </div>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Күнтізбедегі естеліктер"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Күнтізбедегі естеліктер"></video></div></div>
           </div>
         </div>
       </section>
@@ -199,7 +200,7 @@
             <ol class="months" aria-label="Жыл айлары, қазан таңдалған">
               <li>қаң.</li><li>ақп.</li><li>нау.</li><li>сәу.</li><li>мам.</li><li>мау.</li><li>шіл.</li><li>там.</li><li>қыр.</li><li class="now">қаз.</li><li>қар.</li><li>жел.</li>
             </ol>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Фильм редакторы"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Фильм редакторы"></video></div></div>
           </div>
         </div>
       </section>

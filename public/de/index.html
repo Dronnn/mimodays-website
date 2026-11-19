@@ -21,10 +21,11 @@
   <meta name="theme-color" content="#F3E8DE">
   <link rel="icon" href="/assets/icon-64.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/video/today.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="/assets/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/Nunito.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/site.css?v=070c9e3a26">
-  <script src="/assets/site.js?v=e917750584" defer></script>
+  <script src="/assets/site.js?v=a4751522f7" defer></script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="en" href="https://mimodays.mrmaier.com/">
   <link rel="alternate" hreflang="de" href="https://mimodays.mrmaier.com/de/">
@@ -85,11 +86,11 @@
             <div class="phone">
               <div class="phone__screen">
                 <video data-screen="today" class="is-on" src="/assets/video/today.mp4" poster="/assets/video/today.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="surprise" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="camera" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="note" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="memories" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="movie" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="surprise" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="camera" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="note" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="memories" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="movie" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
               </div>
             </div>
           </div>
@@ -125,7 +126,7 @@
               <span class="body">Schau dich um. Das könnte eine Erinnerung werden.</span>
             </div>
             <p><span class="ribbon cut" data-amp="2" data-radius="20"><img src="/assets/star.svg" alt="">Deine nächste Überraschung ist schon unterwegs</span></p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Eine MimoDays-Überraschung auf dem Sperrbildschirm"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Eine MimoDays-Überraschung auf dem Sperrbildschirm"></video></div></div>
           </div>
         </div>
       </section>
@@ -137,7 +138,7 @@
             <h2 class="h2" id="cameras-title">Du und die Welt <br>um dich herum.</h2>
             <p class="lead">Die Szene vor dir und dein eigenes Gesicht, zusammen in einer Erinnerung. Mach ein Foto oder nimm ein kurzes Video auf. Später erzählen die beiden Perspektiven eine vollständigere Geschichte.</p>
             <p class="footnote">Um mit beiden Kameras gleichzeitig zu filmen, brauchst du ein iPhone oder iPad, das dies unterstützt. Auf allen anderen Geräten kommt eine Kamera zum Einsatz.</p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Die MimoDays-Kamera mit dem Selfie-Fenster"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Die MimoDays-Kamera mit dem Selfie-Fenster"></video></div></div>
           </div>
         </div>
       </section>
@@ -163,7 +164,7 @@
               <p>„Sie hat’s geschafft, sie hat’s wirklich geschafft. Schau sie dir an …“</p>
               <small>Auf diesem iPhone transkribiert</small>
             </figure>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Einen Moment mit einer Bildunterschrift und einer Notiz speichern"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Einen Moment mit einer Bildunterschrift und einer Notiz speichern"></video></div></div>
           </div>
         </div>
       </section>
@@ -179,7 +180,7 @@
               <div class="feature cut"><h3 class="h3">Zurück zu den Orten von damals</h3><p>Eine Karte der Orte, die du bewahren wolltest.</p></div>
               <div class="feature cut"><h3 class="h3">Blättere durch die kleinen Dinge</h3><p>Deine Momente der Reihe nach, mit Notizen und Stimmen.</p></div>
             </div>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Erinnerungen im Kalender"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Erinnerungen im Kalender"></video></div></div>
           </div>
         </div>
       </section>
@@ -199,7 +200,7 @@
             <ol class="months" aria-label="Die Monate des Jahres, Oktober ausgewählt">
               <li>Jan.</li><li>Feb.</li><li>März</li><li>Apr.</li><li>Mai</li><li>Juni</li><li>Juli</li><li>Aug.</li><li>Sept.</li><li class="now">Okt.</li><li>Nov.</li><li>Dez.</li>
             </ol>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Der Filmeditor"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Der Filmeditor"></video></div></div>
           </div>
         </div>
       </section>

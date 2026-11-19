@@ -21,10 +21,11 @@
   <meta name="theme-color" content="#F3E8DE">
   <link rel="icon" href="/assets/icon-64.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/video/today.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="/assets/fonts/BalsamiqSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/Comfortaa.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/site.css?v=070c9e3a26">
-  <script src="/assets/site.js?v=e917750584" defer></script>
+  <script src="/assets/site.js?v=a4751522f7" defer></script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="en" href="https://mimodays.mrmaier.com/">
   <link rel="alternate" hreflang="de" href="https://mimodays.mrmaier.com/de/">
@@ -85,11 +86,11 @@
             <div class="phone">
               <div class="phone__screen">
                 <video data-screen="today" class="is-on" src="/assets/video/today.mp4" poster="/assets/video/today.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="surprise" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="camera" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="note" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="memories" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="movie" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="surprise" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="camera" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="note" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="memories" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="movie" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
               </div>
             </div>
           </div>
@@ -125,7 +126,7 @@
               <span class="body">Озирнися. Це може стати спогадом.</span>
             </div>
             <p><span class="ribbon cut" data-amp="2" data-radius="20"><img src="/assets/star.svg" alt="">Твій наступний сюрприз уже в дорозі</span></p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Сюрприз MimoDays на замкненому екрані"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Сюрприз MimoDays на замкненому екрані"></video></div></div>
           </div>
         </div>
       </section>
@@ -137,7 +138,7 @@
             <h2 class="h2" id="cameras-title">Ти і світ <br>навколо тебе.</h2>
             <p class="lead">Те, що перед тобою, і твоє обличчя — в одному спогаді. Зроби фото чи запиши коротке відео. Згодом ці два ракурси розкажуть більше.</p>
             <p class="footnote">Для одночасного запису відео двома камерами потрібен iPhone чи iPad, який це підтримує. На решті пристроїв працює одна камера.</p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Камера MimoDays із віконцем селфі"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Камера MimoDays із віконцем селфі"></video></div></div>
           </div>
         </div>
       </section>
@@ -163,7 +164,7 @@
               <p>«Їй вдалося, їй справді вдалося. Ти тільки поглянь на неї…»</p>
               <small>Розпізнано на цьому iPhone</small>
             </figure>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Збереження моменту з підписом і нотаткою"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Збереження моменту з підписом і нотаткою"></video></div></div>
           </div>
         </div>
       </section>
@@ -179,7 +180,7 @@
               <div class="feature cut"><h3 class="h3">Повернися у знайомі місця</h3><p>Мапа місць, які ти хочеш пам’ятати.</p></div>
               <div class="feature cut"><h3 class="h3">Гортай маленькі миті</h3><p>Твої моменти по черзі, з нотатками й голосами.</p></div>
             </div>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Спогади в календарі"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Спогади в календарі"></video></div></div>
           </div>
         </div>
       </section>
@@ -199,7 +200,7 @@
             <ol class="months" aria-label="Місяці року, вибрано жовтень">
               <li>січ.</li><li>лют.</li><li>бер.</li><li>квіт.</li><li>трав.</li><li>черв.</li><li>лип.</li><li>серп.</li><li>вер.</li><li class="now">жовт.</li><li>лист.</li><li>груд.</li>
             </ol>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Редактор фільму"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="Редактор фільму"></video></div></div>
           </div>
         </div>
       </section>

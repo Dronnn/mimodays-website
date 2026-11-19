@@ -21,8 +21,9 @@
   <meta name="theme-color" content="#F3E8DE">
   <link rel="icon" href="/assets/icon-64.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/video/today.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="/assets/site.css?v=070c9e3a26">
-  <script src="/assets/site.js?v=e917750584" defer></script>
+  <script src="/assets/site.js?v=a4751522f7" defer></script>
   <!-- i18n:alternates -->
   <link rel="alternate" hreflang="en" href="https://mimodays.mrmaier.com/">
   <link rel="alternate" hreflang="de" href="https://mimodays.mrmaier.com/de/">
@@ -83,11 +84,11 @@
             <div class="phone">
               <div class="phone__screen">
                 <video data-screen="today" class="is-on" src="/assets/video/today.mp4" poster="/assets/video/today.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="surprise" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="camera" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="note" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="memories" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
-                <video data-screen="movie" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="surprise" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="camera" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="note" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="memories" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
+                <video data-screen="movie" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none"></video>
               </div>
             </div>
           </div>
@@ -123,7 +124,7 @@
               <span class="body">주변을 둘러보세요. 추억이 될지도 몰라요.</span>
             </div>
             <p><span class="ribbon cut" data-amp="2" data-radius="20"><img src="/assets/star.svg" alt="">다음 서프라이즈가 찾아오고 있어요</span></p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="잠금 화면에 표시된 MimoDays 서프라이즈"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/surprise.mp4" data-poster="/assets/video/surprise.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="잠금 화면에 표시된 MimoDays 서프라이즈"></video></div></div>
           </div>
         </div>
       </section>
@@ -135,7 +136,7 @@
             <h2 class="h2" id="cameras-title">나와<br>나를 둘러싼 세상.</h2>
             <p class="lead">눈앞의 풍경과 내 얼굴을 하나의 추억에 담아요. 사진을 찍거나 짧은 동영상을 남겨 보세요. 나중에 돌아보면 두 시선이 더 풍성한 이야기를 들려줘요.</p>
             <p class="footnote">두 카메라로 동시에 촬영하려면 이 기능을 지원하는 iPhone이나 iPad가 필요해요. 그 외의 기기에서는 카메라 하나를 사용해요.</p>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="셀피 창이 있는 MimoDays 카메라"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/camera.mp4" data-poster="/assets/video/camera.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="셀피 창이 있는 MimoDays 카메라"></video></div></div>
           </div>
         </div>
       </section>
@@ -161,7 +162,7 @@
               <p>“해냈어요, 정말 해냈어요. 저렇게 잘하다니…”</p>
               <small>이 iPhone에서 텍스트로 변환됨</small>
             </figure>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="캡션과 메모를 더해 순간 저장하기"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/note.mp4" data-poster="/assets/video/note.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="캡션과 메모를 더해 순간 저장하기"></video></div></div>
           </div>
         </div>
       </section>
@@ -177,7 +178,7 @@
               <div class="feature cut"><h3 class="h3">그곳으로 다시 가 봐요</h3><p>간직하기로 한 장소들을 지도에서 만나요.</p></div>
               <div class="feature cut"><h3 class="h3">소소한 순간을 하나씩</h3><p>메모와 목소리까지, 순간을 차례로 돌아봐요.</p></div>
             </div>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="캘린더에서 보는 추억"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/memories.mp4" data-poster="/assets/video/memories.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="캘린더에서 보는 추억"></video></div></div>
           </div>
         </div>
       </section>
@@ -197,7 +198,7 @@
             <ol class="months" aria-label="1월부터 12월까지, 10월 선택됨">
               <li>1월</li><li>2월</li><li>3월</li><li>4월</li><li>5월</li><li>6월</li><li>7월</li><li>8월</li><li>9월</li><li class="now">10월</li><li>11월</li><li>12월</li>
             </ol>
-            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="무비 편집기"></video></div></div>
+            <div class="phone phone--inline"><div class="phone__screen"><video class="is-on" src="/assets/video/movie.mp4" data-poster="/assets/video/movie.jpg" width="552" height="1200" muted loop playsinline preload="none" aria-label="무비 편집기"></video></div></div>
           </div>
         </div>
       </section>

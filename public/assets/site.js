@@ -104,6 +104,19 @@
     });
   }
 
+  // Only the first screen's poster comes with the page; the others arrive a screen before they're seen,
+  // so they don't take the connection from the first one. Hidden phones never ask for theirs.
+  const later = document.querySelectorAll("video[data-poster]");
+  const poster = v => { v.poster = v.dataset.poster; v.removeAttribute("data-poster"); };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { poster(e.target); io.unobserve(e.target); }
+    }), { rootMargin: "100% 0px" });
+    later.forEach(v => io.observe(v));
+  } else {
+    later.forEach(poster);
+  }
+
   // The phone that stays put: shows the screen of the chapter crossing the middle of the window.
   const rail = document.querySelector(".rail");
   const layers = rail ? [...rail.querySelectorAll("[data-screen]")] : [];
@@ -113,6 +126,15 @@
   const play = media => {
     if (!(media instanceof HTMLVideoElement)) return;
     if (reduceMotion.matches || stopped()) { media.pause(); return; }
+    // A phone the layout hides (the wide-screen one on a phone) would only download its recording.
+    if (!media.getClientRects().length) return;
+    // Recordings start once the page has loaded: on a slow connection they'd delay the first screen.
+    if (document.readyState !== "complete") {
+      addEventListener("load", () => {
+        if (layers.includes(media) ? media.classList.contains("is-on") : seen.has(media)) play(media);
+      }, { once: true });
+      return;
+    }
     if (media.preload === "none") media.preload = "auto";
     media.play().catch(() => {});
   };

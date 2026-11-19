@@ -123,11 +123,22 @@ test('images have alt text and media have their files', () => {
   for (const [file, text] of html) {
     for (const img of tags(text, 'img')) assert.ok(attr(img, 'alt') !== undefined, `${urlPath(file)}: ${img} has no alt`);
     for (const tag of [...tags(text, 'img'), ...tags(text, 'source'), ...tags(text, 'video')]) {
-      for (const name of ['src', 'poster', 'data-src']) {
+      for (const name of ['src', 'poster', 'data-src', 'data-poster']) {
         const value = attr(tag, name);
         if (value && value.startsWith('/')) assert.ok(served(value), `${urlPath(file)}: ${value} missing`);
       }
     }
+  }
+});
+
+test('home pages load only the first screen\'s poster with the page', () => {
+  // The others wait for site.js, so on a slow phone they don't slow the first screen.
+  for (const [file, text] of html) {
+    if (!/(^|\/)index\.html$/.test(relative(pub, file)) || !text.includes('class="story"')) continue;
+    const eager = new Set(tags(text, 'video').map((v) => attr(v, 'poster')).filter(Boolean));
+    assert.deepEqual([...eager], ['/assets/video/today.jpg'], urlPath(file));
+    const preload = tags(text, 'link').find((l) => attr(l, 'rel') === 'preload' && attr(l, 'as') === 'image');
+    assert.equal(attr(preload ?? '', 'href'), '/assets/video/today.jpg', `${urlPath(file)} preloads the first poster`);
   }
 });
 
