@@ -1,7 +1,10 @@
 /* MimoDays website. Tokens, fonts and the hand-cut shapes come from the app. */
 
-/* The app's faces, one set per alphabet (Andrew, 2026-11-19), cut to the letters the pages use. */
-@font-face { font-family: "Grandstander"; src: url("fonts/Grandstander.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+/* The app's faces, one set per alphabet (Andrew, 2026-11-19), cut to the letters the pages use. Latin letters keep the design's. */
+@font-face { font-family: "Fraunces"; src: url("fonts/Fraunces.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("fonts/Nunito.woff2") format("woff2"); font-weight: 200 1000; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Patrick Hand"; src: url("fonts/PatrickHand-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Comfortaa"; src: url("fonts/Comfortaa.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
 @font-face { font-family: "Shantell Sans"; src: url("fonts/ShantellSans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 @font-face { font-family: "Balsamiq Sans"; src: url("fonts/BalsamiqSans-Bold.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
@@ -36,16 +39,18 @@
   --device: #2A1B21;
 
   /* Headings, body text, small labels and handwriting: Latin letters; the other alphabets below. */
-  --serif: "Grandstander", ui-rounded, system-ui, sans-serif;
-  --sans: "Comfortaa", ui-rounded, system-ui, sans-serif;
-  --label: var(--sans);
-  --hand: "Shantell Sans", ui-rounded, system-ui, sans-serif;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Nunito", system-ui, sans-serif;
+  --label: "Inter", system-ui, sans-serif;
+  --hand: "Patrick Hand", "Comic Sans MS", cursive;
 
   --gutter: clamp(20px, 6vw, 120px);
   --content: 1200px;
 }
 
-:root:lang(ru), :root:lang(uk), :root:lang(be), :root:lang(kk) { --serif: "Balsamiq Sans", ui-rounded, system-ui, sans-serif; }
+:root:lang(ru), :root:lang(uk), :root:lang(be), :root:lang(kk) { --serif: "Balsamiq Sans", ui-rounded, system-ui, sans-serif; --sans: "Comfortaa", ui-rounded, system-ui, sans-serif; --hand: "Shantell Sans", ui-rounded, system-ui, sans-serif; }
+/* Small labels are Inter only in Latin letters; elsewhere they take the body face. */
+:root:lang(ru), :root:lang(uk), :root:lang(be), :root:lang(kk), :root:lang(he), :root:lang(ar), :root:lang(hy), :root:lang(ka), :root:lang(ja), :root:lang(ko), :root:lang(zh) { --label: var(--sans); }
 :root:lang(he) { --serif: "Fredoka", ui-rounded, system-ui, sans-serif; --sans: "Fredoka", ui-rounded, system-ui, sans-serif; --hand: "Playpen Sans Hebrew", ui-rounded, system-ui, sans-serif; }
 :root:lang(ar) { --serif: "Marhey", system-ui, sans-serif; --sans: "Baloo Bhaijaan 2", system-ui, sans-serif; --hand: "Marhey", system-ui, sans-serif; }
 :root:lang(hy) { --serif: "Noto Sans Armenian", system-ui, sans-serif; --sans: "Noto Sans Armenian", system-ui, sans-serif; --hand: ui-rounded, system-ui, sans-serif; }
