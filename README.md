@@ -48,7 +48,7 @@ And one more: **it's private.** No feed, no followers, no pressure.
 
 - On wide screens one phone stays in place while the chapters scroll past; it plays each chapter's recording from the app (`assets/video/`, 552×1200 H.264, muted, with a poster). A video plays only while its chapter is in view, and with Reduce Motion only the poster shows. On narrow screens each chapter has its own phone, played while it is on screen.
 - Cards get the app's hand-cut outline from `assets/site.js`; without JavaScript they fall back to plain rounded cards.
-- Fonts are the app's own, one set per alphabet (Latin: Grandstander, Comfortaa, Shantell Sans; Cyrillic headings in Balsamiq Sans; Hebrew, Arabic, Armenian, Georgian, Japanese, Korean and Chinese have theirs). `site.css` picks them by the page's language; each is cut to the letters the pages use and served from this site (SIL OFL, licences in `assets/fonts/`).
+- Fonts are the app's own, one set per alphabet (Latin: the design's Fraunces, Nunito, Inter and Patrick Hand; Cyrillic: Balsamiq Sans, Comfortaa, Shantell Sans; Hebrew, Arabic, Armenian, Georgian, Japanese, Korean and Chinese have theirs). `site.css` picks them by the page's language; each is cut to the letters the pages use and served from this site (SIL OFL, licences in `assets/fonts/`).
 - Until the app is on the App Store the site says "Coming soon to the App Store" in plain text. Apple's badge is only for apps already available, used unmodified and linked to the product page; it replaces that line at release.
 
 ## Languages

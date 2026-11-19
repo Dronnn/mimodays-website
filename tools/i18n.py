@@ -283,7 +283,7 @@ def translate(page, path, hreflang, rtl, table):
 
 
 # The heading and body faces each alphabet's pages load first (site.css picks them by the page's language).
-LATIN_PRELOADS = ["Grandstander", "Comfortaa"]
+LATIN_PRELOADS = ["Fraunces", "Nunito"]
 PRELOADS = {
     "ru": ["BalsamiqSans-Bold", "Comfortaa"], "uk": ["BalsamiqSans-Bold", "Comfortaa"],
     "be": ["BalsamiqSans-Bold", "Comfortaa"], "kk": ["BalsamiqSans-Bold", "Comfortaa"],
