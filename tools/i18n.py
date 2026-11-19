@@ -264,6 +264,8 @@ def translate(page, path, hreflang, rtl, table):
     for start, end, new in sorted(edits, reverse=True):
         text = text[:start] + new + text[end:]
     text = re.sub(r'(<a\b[^>]*?)href="([^"]*)"', lambda m: f'{m.group(1)}href="{localized_href(m.group(2), path)}"', text)
+    if path in PRELOADS:
+        text = text.replace(preloads(LATIN_PRELOADS), preloads(PRELOADS[path]), 1)
     direction = ' dir="rtl"' if rtl else ""
     text = text.replace('<html lang="en">', f'<html lang="{hreflang}"{direction}>', 1)
     text = text.replace('<meta property="og:locale" content="en_US">', f'<meta property="og:locale" content="{OG_LOCALE[path]}">', 1)
@@ -278,6 +280,20 @@ def translate(page, path, hreflang, rtl, table):
         note = table["This translation is provided for convenience. If it differs from the English version, the English version applies."]
         text = re.sub(r"(</h1>)", rf'\1\n      <p class="translation-note">{html.escape(note)}</p>', text, count=1)
     return decorate(text, path, page, table["Language"])
+
+
+# The heading and body faces each alphabet's pages load first (site.css picks them by the page's language).
+LATIN_PRELOADS = ["Grandstander", "Comfortaa"]
+PRELOADS = {
+    "ru": ["BalsamiqSans-Bold", "Comfortaa"], "uk": ["BalsamiqSans-Bold", "Comfortaa"],
+    "be": ["BalsamiqSans-Bold", "Comfortaa"], "kk": ["BalsamiqSans-Bold", "Comfortaa"],
+    "he": ["Fredoka"], "ar": ["Marhey", "BalooBhaijaan2"], "hy": ["NotoSansArmenian"], "ka": ["NotoSansGeorgian"],
+    "ja": ["MPLUSRounded1c-Bold"], "ko": [], "zh-hans": ["ZCOOLKuaiLe-Regular"], "zh-hant": [],
+}
+
+
+def preloads(fonts):
+    return "".join(f'  <link rel="preload" href="/assets/fonts/{name}.woff2" as="font" type="font/woff2" crossorigin>\n' for name in fonts)
 
 
 def stamp_assets():
