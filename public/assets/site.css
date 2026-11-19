@@ -1,9 +1,19 @@
 /* MimoDays website. Tokens, fonts and the hand-cut shapes come from the app. */
 
-@font-face { font-family: "Fraunces"; src: url("fonts/Fraunces.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Nunito"; src: url("fonts/Nunito.woff2") format("woff2"); font-weight: 200 1000; font-display: swap; }
-@font-face { font-family: "Inter"; src: url("fonts/Inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: "Patrick Hand"; src: url("fonts/PatrickHand-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+/* The app's faces, one set per alphabet (Andrew, 2026-11-19), cut to the letters the pages use. */
+@font-face { font-family: "Grandstander"; src: url("fonts/Grandstander.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Comfortaa"; src: url("fonts/Comfortaa.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "Shantell Sans"; src: url("fonts/ShantellSans.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Balsamiq Sans"; src: url("fonts/BalsamiqSans-Bold.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Fredoka"; src: url("fonts/Fredoka.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "Playpen Sans Hebrew"; src: url("fonts/PlaypenSansHebrew.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Marhey"; src: url("fonts/Marhey.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: "Baloo Bhaijaan 2"; src: url("fonts/BalooBhaijaan2.woff2") format("woff2"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "Noto Sans Armenian"; src: url("fonts/NotoSansArmenian.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Noto Sans Georgian"; src: url("fonts/NotoSansGeorgian.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "M PLUS Rounded 1c"; src: url("fonts/MPLUSRounded1c-Bold.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Jua"; src: url("fonts/Jua-Regular.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "ZCOOL KuaiLe"; src: url("fonts/ZCOOLKuaiLe-Regular.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
 
 :root {
   color-scheme: light;
@@ -25,14 +35,25 @@
   --border: #E4D5CB;
   --device: #2A1B21;
 
-  --serif: "Fraunces", Georgia, serif;
-  --sans: "Nunito", system-ui, sans-serif;
-  --label: "Inter", system-ui, sans-serif;
-  --hand: "Patrick Hand", "Comic Sans MS", cursive;
+  /* Headings, body text, small labels and handwriting: Latin letters; the other alphabets below. */
+  --serif: "Grandstander", ui-rounded, system-ui, sans-serif;
+  --sans: "Comfortaa", ui-rounded, system-ui, sans-serif;
+  --label: var(--sans);
+  --hand: "Shantell Sans", ui-rounded, system-ui, sans-serif;
 
   --gutter: clamp(20px, 6vw, 120px);
   --content: 1200px;
 }
+
+:root:lang(ru), :root:lang(uk), :root:lang(be), :root:lang(kk) { --serif: "Balsamiq Sans", ui-rounded, system-ui, sans-serif; }
+:root:lang(he) { --serif: "Fredoka", ui-rounded, system-ui, sans-serif; --sans: "Fredoka", ui-rounded, system-ui, sans-serif; --hand: "Playpen Sans Hebrew", ui-rounded, system-ui, sans-serif; }
+:root:lang(ar) { --serif: "Marhey", system-ui, sans-serif; --sans: "Baloo Bhaijaan 2", system-ui, sans-serif; --hand: "Marhey", system-ui, sans-serif; }
+:root:lang(hy) { --serif: "Noto Sans Armenian", system-ui, sans-serif; --sans: "Noto Sans Armenian", system-ui, sans-serif; --hand: ui-rounded, system-ui, sans-serif; }
+:root:lang(ka) { --serif: "Noto Sans Georgian", system-ui, sans-serif; --sans: "Noto Sans Georgian", system-ui, sans-serif; --hand: ui-rounded, system-ui, sans-serif; }
+:root:lang(ja) { --serif: "M PLUS Rounded 1c", ui-rounded, system-ui, sans-serif; --sans: ui-rounded, system-ui, sans-serif; --hand: "Hiragino Maru Gothic ProN", ui-rounded, system-ui, sans-serif; }
+:root:lang(ko) { --serif: ui-rounded, system-ui, sans-serif; --sans: ui-rounded, system-ui, sans-serif; --hand: "Jua", ui-rounded, system-ui, sans-serif; }
+:root:lang(zh-Hans) { --serif: "ZCOOL KuaiLe", ui-rounded, system-ui, sans-serif; --sans: ui-rounded, system-ui, sans-serif; --hand: "ZCOOL KuaiLe", ui-rounded, system-ui, sans-serif; }
+:root:lang(zh-Hant) { --serif: "Hiragino Maru Gothic ProN", ui-rounded, system-ui, sans-serif; --sans: ui-rounded, system-ui, sans-serif; --hand: "Hiragino Maru Gothic ProN", ui-rounded, system-ui, sans-serif; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -69,7 +90,8 @@ h1, h2, h3, p { margin: 0; }
 .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 30px; }
 .hero__note { margin-top: 26px; }
 .hand { font-family: var(--hand); font-weight: 400; }
-.underlined { position: relative; white-space: nowrap; }
+/* An inline block, so the stroke sits by the line rather than by the face's own (Arabic and Japanese faces run tall). */
+.underlined { position: relative; display: inline-block; white-space: nowrap; }
 .underlined::after { content: ""; position: absolute; left: 2%; right: -2%; bottom: -.12em; height: .16em; background: url("underline.svg") center / 100% 100% no-repeat; }
 
 /* Hand-cut shapes: site.js draws an uneven outline behind every .cut; without it, a plain rounded card. */

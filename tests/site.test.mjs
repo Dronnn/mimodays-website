@@ -186,3 +186,15 @@ test('every language file has every key', () => {
     assert.deepEqual(missing, [], `${f} lacks keys`);
   }
 });
+
+test('every font the stylesheet and pages load is here', () => {
+  const css = readFileSync(join(pub, 'assets', 'site.css'), 'utf8');
+  const urls = [...css.matchAll(/url\("fonts\/([^"]+)"\)/g)].map((m) => m[1]);
+  assert.ok(urls.length >= 13);
+  for (const name of urls) assert.ok(existsSync(join(pub, 'assets', 'fonts', name)), `missing ${name}`);
+  for (const page of pages) {
+    for (const m of readFileSync(page, 'utf8').matchAll(/href="\/assets\/fonts\/([^"]+)"/g)) {
+      assert.ok(urls.includes(m[1]), `${relative(pub, page)} preloads ${m[1]}, which site.css does not use`);
+    }
+  }
+});
