@@ -176,6 +176,18 @@ test('the sitemap lists every page and only real ones', () => {
   assert.match(robots, new RegExp(`Sitemap: ${origin}/sitemap.xml`));
 });
 
+test('the stylesheet and scripts kept for a year are always asked for by version', () => {
+  const headers = readFileSync(join(pub, '_headers'), 'utf8');
+  for (const name of ['site.css', 'site.js', 'lang.js']) {
+    assert.match(headers, new RegExp(`/assets/${name.replace('.', '\\.')}\\n  ! Cache-Control\\n  Cache-Control: public, max-age=31536000, immutable`), name);
+    for (const [file, text] of html) {
+      for (const m of text.matchAll(new RegExp(`/assets/${name.replace('.', '\\.')}[^"]*`, 'g'))) {
+        assert.match(m[0], /\?v=[0-9a-f]{10}$/, `${urlPath(file)} asks for ${m[0]} without a version`);
+      }
+    }
+  }
+});
+
 test('security headers', () => {
   const headers = readFileSync(join(pub, '_headers'), 'utf8');
   for (const name of ['Strict-Transport-Security', 'X-Content-Type-Options: nosniff', 'Referrer-Policy', 'Permissions-Policy', 'X-Frame-Options: DENY', 'Content-Security-Policy']) {
