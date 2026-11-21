@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">무비</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">개인정보 보호</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">자주 묻는 질문</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">곧 App Store에서 만나요",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">메뉴</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>동영상 일시 정지",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">지금 이 순간에도 일상은 흘러가요",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "이 페이지는 존재하지 않아요.",
  "Language": "언어",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "이 번역은 편의를 위해 제공해요. 영어 버전과 내용이 다르면 영어 버전이 적용돼요.",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: 작은 조각으로 담아낸 일상 · iPhone 추억 일기"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: 작은 조각으로 담아낸 일상 · iPhone 추억 일기",
+ "Download on the App Store": "App Store에서 다운로드"
 }

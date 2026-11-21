@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">סרטים</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">פרטיות</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">שאלות נפוצות</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">בקרוב ב־App Store",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">תפריט</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>השהיית הסרטונים",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">החיים קורים עכשיו",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "הדף הזה לא קיים.",
  "Language": "שפה",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "התרגום הזה ניתן לנוחותך. במקרה של הבדל בינו לבין הגרסה באנגלית, הגרסה באנגלית היא הקובעת.",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: החיים שלך, בפיסות קטנות · יומן זיכרונות ל־iPhone"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: החיים שלך, בפיסות קטנות · יומן זיכרונות ל־iPhone",
+ "Download on the App Store": "הורידו מ-App Store"
 }

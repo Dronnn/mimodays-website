@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">Filmler</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">Gizlilik</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">Sık sorulanlar</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Yakında App Store'da",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">Menü</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Videoları duraklat",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">Hayat tam şu an yaşanıyor",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "Böyle bir sayfa yok.",
  "Language": "Dil",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "Bu çeviri kolaylık sağlamak amacıyla sunulmuştur. İngilizce sürümle arasında farklılık olması hâlinde İngilizce sürüm geçerlidir.",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: hayatın, küçük parçalar hâlinde · iPhone için anı günlüğü"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: hayatın, küçük parçalar hâlinde · iPhone için anı günlüğü",
+ "Download on the App Store": "App Store’dan İndirin"
 }

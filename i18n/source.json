@@ -20,9 +20,6 @@
  "<a href=\"#faq\">FAQ</a>": {
   "page": "index.html"
  },
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": {
-  "page": "index.html"
- },
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": {
   "page": "index.html"
  },
@@ -312,6 +309,9 @@
   "page": "index.html"
  },
  "Main": {
+  "page": "index.html"
+ },
+ "Download on the App Store": {
   "page": "index.html"
  },
  "The Today screen of MimoDays": {

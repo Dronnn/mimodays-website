@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">Фильмдер</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">Құпиялылық</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">Жиі қойылатын сұрақтар</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Жақында App Store дүкенінде",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">Мәзір</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Бейнелерді кідірту",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">Өмір дәл қазір өтіп жатыр",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "Мұндай бет жоқ.",
  "Language": "Тіл",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "Бұл аударма ыңғайлы болу үшін ұсынылған. Ол ағылшын тіліндегі нұсқадан өзгеше болса, ағылшын тіліндегі нұсқа қолданылады.",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: өміріңнің шағын сәттері · iPhone-ға арналған естелік күнделігі"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: өміріңнің шағын сәттері · iPhone-ға арналған естелік күнделігі",
+ "Download on the App Store": "App Store-дан жүктеп алыңыз"
 }

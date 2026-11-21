@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">影片</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">隐私</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">常见问题</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">即将登陆 App Store",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">菜单</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>暂停视频",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">生活，就在此刻",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "此页面不存在。",
  "Language": "语言",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "本译文仅为方便阅读而提供。如与英文版本有出入，以英文版本为准。",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays：生活，一点一滴 · iPhone 回忆日记"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays：生活，一点一滴 · iPhone 回忆日记",
+ "Download on the App Store": "在 App Store 下载"
 }

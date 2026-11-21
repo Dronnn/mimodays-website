@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">Filmy</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">Prywatność</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">Pytania</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Wkrótce w App Store",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Wstrzymaj filmy",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">Życie dzieje się właśnie teraz",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "Ta strona nie istnieje.",
  "Language": "Język",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "To tłumaczenie ma charakter pomocniczy. W razie rozbieżności z wersją angielską obowiązuje wersja angielska.",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: twoje życie. Małe chwile. · Dziennik wspomnień na iPhone’a"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays: twoje życie. Małe chwile. · Dziennik wspomnień na iPhone’a",
+ "Download on the App Store": "Pobierz z App Store"
 }

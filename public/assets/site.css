@@ -128,15 +128,15 @@ h1, h2, h3, p { margin: 0; }
 .lang-switch__panel a:hover { background: var(--soft); }
 .lang-switch__panel a[aria-current] { background: var(--peach); font-weight: 700; }
 .lang-switch__panel a[aria-current]::after { content: ""; width: 13px; height: 13px; margin-inline-start: auto; background: url("star.svg") center / contain no-repeat; }
-.lang-switch + .soon { margin-inline-start: -12px; }
+.lang-switch + .store { margin-inline-start: -8px; }
 .menu-button { display: none; width: 44px; height: 44px; border: 0; background: none; padding: 10px; color: var(--ink); cursor: pointer; }
 .menu-button span { display: block; height: 2.5px; border-radius: 2px; background: currentColor; margin: 5px 0; }
 
-/* Not Apple's badge: that is only for apps already on the App Store. A plain line until the release. */
-.soon { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding-block: 0; padding-inline: 10px 20px; border-radius: 999px; background: var(--card); color: var(--ink); font: 700 15px/1 var(--sans); white-space: nowrap; box-shadow: inset 0 0 0 1.5px var(--border); }
-.soon img { width: 28px; height: 28px; border-radius: 7px; }
-.soon--large { height: 56px; padding-inline-end: 24px; font-size: 17px; }
-.soon--large img { width: 34px; height: 34px; border-radius: 8px; }
+/* Apple's badge, unmodified, linked to the App Store page; at least 40px tall and a quarter of its height clear. */
+.store { display: inline-flex; flex: none; border-radius: 8px; }
+.store img { display: block; width: auto; height: 40px; }
+.store--large img { height: 50px; }
+.store:focus-visible { outline: 2.5px solid var(--link); outline-offset: 4px; }
 
 /* The story: sections 1-6, with one phone that stays put on wide screens. */
 .story { position: relative; }
@@ -263,14 +263,14 @@ h1, h2, h3, p { margin: 0; }
 /* Narrow screens: no sticky phone, each chapter shows its own. */
 /* The bar keeps to one line in every language: site.js folds it when it doesn't fit (the badge first, it waits in
    the hero; then the menu behind its button). Without script, the widths below do the same. */
-.site-header.is-tight .soon { display: none; }
+.site-header.is-tight .store { display: none; }
 .site-header.is-folded .menu-button { display: block; }
 .site-header.is-folded .nav { display: none; position: absolute; top: 88px; left: var(--gutter); right: var(--gutter); padding: 14px 22px; border-radius: 18px; background: var(--card); box-shadow: 0 16px 40px -14px rgba(74, 39, 52, .4); }
 .site-header.is-folded .nav.is-open { display: block; }
 .site-header.is-folded .nav ul { flex-direction: column; gap: 0; }
 .site-header.is-folded .nav a { display: block; padding: 12px 0; font-size: 18px; }
 @media (max-width: 1099px) {
-  .site-header .soon { display: none; }
+  .site-header .store { display: none; }
   .menu-button { display: block; }
   .nav { display: none; position: absolute; top: 88px; left: var(--gutter); right: var(--gutter); padding: 14px 22px; border-radius: 18px; background: var(--card); box-shadow: 0 16px 40px -14px rgba(74, 39, 52, .4); }
   .nav.is-open { display: block; }

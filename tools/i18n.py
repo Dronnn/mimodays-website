@@ -241,7 +241,7 @@ def decorate(text, path, page, label):
     text = BLOCK.sub("", text)
     if page != "404.html":
         text = text.replace("</head>", "  " + alternates(page, path == "en") + "\n</head>", 1)
-    text = text.replace('<span class="soon">', language_switch(path, page, label) + '\n      <span class="soon">', 1)
+    text = text.replace('<a class="store"', language_switch(path, page, label) + '\n      <a class="store"', 1)
     menu = language_menu(path, page, label)
     text = re.sub(r'(\n\s*<p class="legal-line">)', "\n      " + menu + r"\1", text, count=1)
     return text
@@ -266,6 +266,7 @@ def translate(page, path, hreflang, rtl, table):
     text = re.sub(r'(<a\b[^>]*?)href="([^"]*)"', lambda m: f'{m.group(1)}href="{localized_href(m.group(2), path)}"', text)
     if path in PRELOADS:
         text = text.replace(preloads(LATIN_PRELOADS), preloads(PRELOADS[path]), 1)
+    text = text.replace("/assets/badges/app-store-en.svg", f"/assets/badges/app-store-{path if path in BADGES else 'en'}.svg")
     direction = ' dir="rtl"' if rtl else ""
     text = text.replace('<html lang="en">', f'<html lang="{hreflang}"{direction}>', 1)
     text = text.replace('<meta property="og:locale" content="en_US">', f'<meta property="og:locale" content="{OG_LOCALE[path]}">', 1)
@@ -280,6 +281,10 @@ def translate(page, path, hreflang, rtl, table):
         note = table["This translation is provided for convenience. If it differs from the English version, the English version applies."]
         text = re.sub(r"(</h1>)", rf'\1\n      <p class="translation-note">{html.escape(note)}</p>', text, count=1)
     return decorate(text, path, page, table["Language"])
+
+
+# Apple's "Download on the App Store" badge exists in these; the others show the English one, as Apple asks.
+BADGES = {"en", "de", "fr", "es", "it", "nl", "sv", "pl", "pt-br", "ru", "uk", "tr", "he", "ja", "ko", "zh-hans", "zh-hant"}
 
 
 # The heading and body faces each alphabet's pages load first (site.css picks them by the page's language).

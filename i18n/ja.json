@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">ムービー</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">プライバシー</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">よくある質問</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">App Storeで近日公開",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">メニュー</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>ビデオを一時停止",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">日々は、今ここに",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "このページは存在しません。",
  "Language": "言語",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "この翻訳は便宜上提供しています。英語版と内容が異なる場合は、英語版が優先されます。",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays：日々のかけらが、人生になる。 · iPhoneの思い出日記"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays：日々のかけらが、人生になる。 · iPhoneの思い出日記",
+ "Download on the App Store": "App Storeからダウンロード"
 }

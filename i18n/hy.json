@@ -6,7 +6,6 @@
  "<a href=\"#movie\">Movies</a>": "<a href=\"#movie\">Ֆիլմեր</a>",
  "<a href=\"#privacy\">Privacy</a>": "<a href=\"#privacy\">Գաղտնիություն</a>",
  "<a href=\"#faq\">FAQ</a>": "<a href=\"#faq\">ՀՏՀ</a>",
- "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Coming soon to the App Store": "<img src=\"/assets/icon-64.png\" alt=\"\" width=\"28\" height=\"28\">Շուտով՝ App Store-ում",
  "<span></span><span></span><span></span><span class=\"visually-hidden\">Menu</span>": "<span></span><span></span><span></span><span class=\"visually-hidden\">Ընտրացանկ</span>",
  "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Pause videos": "<span class=\"motion-toggle__icon\" aria-hidden=\"true\"></span>Դադարեցնել տեսանյութերի նվագարկումը",
  "<img src=\"/assets/star.svg\" alt=\"\">Life is happening right now": "<img src=\"/assets/star.svg\" alt=\"\">Կյանքը հենց հիմա է",
@@ -190,5 +189,6 @@
  "This page doesn’t exist.": "Այս էջը գոյություն չունի։",
  "Language": "Լեզու",
  "This translation is provided for convenience. If it differs from the English version, the English version applies.": "Այս թարգմանությունը տրամադրվում է հարմարության համար։ Եթե այն տարբերվում է անգլերեն տարբերակից, կիրառվում է անգլերեն տարբերակը։",
- "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays․ քո կյանքը՝ փոքրիկ պատառներով · հիշողությունների օրագիր iPhone-ի համար"
+ "MimoDays: your life, in little pieces · memory journal for iPhone": "MimoDays․ քո կյանքը՝ փոքրիկ պատառներով · հիշողությունների օրագիր iPhone-ի համար",
+ "Download on the App Store": "Ներբեռնեք App Store-ից"
 }
