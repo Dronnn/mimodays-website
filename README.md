@@ -77,7 +77,17 @@ Then open http://127.0.0.1:8765.
 
 ## Deploy
 
-https://mimodays.mrmaier.com is a Cloudflare Worker that serves `public/` as static files (`wrangler.jsonc`; `_headers` sets the security headers, `404.html` is the not-found page). Cloudflare Workers Builds deploys `main` on every push. Work happens on `develop` and reaches the site through a pull request into `main`.
+https://mimodays.mrmaier.com is a Cloudflare Worker that serves `public/` as static files (`wrangler.jsonc`; `_headers` sets the security headers, `404.html` is the not-found page). Cloudflare Workers Builds deploys `main` on every push. Work happens on `develop`, is merged into `main` and pushed; each change is checked on the live site once it is deployed.
+
+## Checks
+
+- `node --test tests/` (Node's own runner, no dependencies): every language's pages, `lang`/`dir`, titles and canonical links, `hreflang`, alt text, internal links, the sitemap, versioned assets, security headers, fonts, and a weight budget for each page's first screen.
+- On the live site (November 2026): WCAG 2.2 AA script audit at desktop and 320 px, English and right to left (text contrast, 24 px targets, headings, landmarks, skip link, names on every link and button, no sideways scrolling); external links answer; HTTP goes to HTTPS; the security headers in `_headers` are served; the first screen loads in about 0.1 s on a warm connection.
+
+## Left to do
+
+- Once MimoDays 1.0.7 is on the App Store: check the pages' claims against it (zoom, focus, smaller videos).
+- A Lighthouse run on a real phone; nothing is installed here for it.
 
 ## License
 
