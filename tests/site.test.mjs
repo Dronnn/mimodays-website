@@ -142,6 +142,18 @@ test('home pages load only the first screen\'s poster with the page', () => {
   }
 });
 
+test('the first screen stays light', () => {
+  // A speed budget without Lighthouse: each page with its stylesheet, scripts and first poster, before fonts
+  // (19.2). Today: about 60 KB of page, CSS and JS and a 100 KB poster.
+  const size = (path) => statSync(join(pub, path)).size;
+  const shared = size('assets/site.css') + size('assets/site.js') + size('assets/lang.js');
+  for (const [file, text] of html) {
+    const poster = text.includes('class="story"') ? size('assets/video/today.jpg') : 0;
+    const total = statSync(file).size + shared + poster;
+    assert.ok(total < 250 * 1024, `${urlPath(file)}: ${Math.round(total / 1024)} KB`);
+  }
+});
+
 test('internal links lead somewhere', () => {
   for (const [file, text] of html) {
     for (const a of [...tags(text, 'a'), ...tags(text, 'link'), ...tags(text, 'script')]) {
