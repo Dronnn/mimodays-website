@@ -107,7 +107,7 @@ h1, h2, h3, p { margin: 0; }
 /* Header */
 .site-header { position: relative; z-index: 10; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 100px; }
-.wordmark { display: inline-flex; align-items: flex-start; gap: 2px; font: 600 26px/1 var(--serif); text-decoration: none; }
+.wordmark { display: inline-flex; align-items: flex-start; gap: 2px; min-height: 24px; font: 600 26px/1 var(--serif); text-decoration: none; } /* 24 px to touch (WCAG 2.2, 2.5.8) */
 .wordmark img { width: 17px; margin-top: -6px; }
 .nav ul { display: flex; gap: clamp(16px, 2.2vw, 36px); list-style: none; margin: 0; padding: 0; }
 .nav a { font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap; }
